@@ -14,7 +14,7 @@ export const validationUser = async (values) => {
     const {email , password} = values
     const response = await fetch("https://integrador-wd4g.onrender.com/login",{
     method : "POST",
-    headers: { "Content-Type":"application/json" },
+    headers: {"Content-Type":"application/json"},
     body : JSON.stringify({email : email , password : password})
     })
     const status = response.status
