@@ -9,7 +9,9 @@ const initialState = {
 }
 
 export const getProds = createAsyncThunk("products/getProds" , async() => {
-    return fetch("https://integrador-wd4g.onrender.com/products").then((res) =>  res.json())
+    return fetch("https://integrador-wd4g.onrender.com/products", {
+    mode : "no-cors"
+    }).then((res) =>  res.json())
 }) 
 
 
