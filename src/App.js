@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import { Navbar } from "./components/navbar/navbar";
+import { RouterProvider } from "react-router-dom";
+import Router from "./routes/Routes";
+import { GlobalStyle } from "./styles/createGlobalStyles";
+import Routes from "./routes/Routes";
+import { useDispatch } from "react-redux";
+import { getProds } from "./redux/productsReducer/productsSlice";
+import { useEffect } from "react";
+
+
+
+export default function App() {
+  const dispatch = useDispatch()
+  useEffect(()=> {
+    dispatch(getProds())
+    
+  },[getProds])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <GlobalStyle/>
+    <Routes/>
+    
+  
+   
+   
+    </>
+   
   );
 }
 
-export default App;
+
