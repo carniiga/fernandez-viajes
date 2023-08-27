@@ -69,15 +69,18 @@ export const ItemsContainer = styled.div`
     @media(min-width:375px){
         position: absolute;
         right: 0;
-        height: 400px;
-        margin-top: 300px;
+        height: 300px;
+        margin-top: 150px;
         flex-direction: column;
+        position: relative;
+        top: 0;
         width:300px;
     }
     @media(min-width : 425px){
         margin-top: 200px;
         height: 300px ;
-       display: ${props => props.hidden? "none" : "flex"};
+      
+       
     }
     @media(min-width : 1024px){
         display: flex;
@@ -176,7 +179,9 @@ export const IconBurgerContainer = styled.div`
     justify-content: center;
     text-align: center;
     @media(min-width : 375px){
-        margin-left: 250px;
+        margin-left: 200px;
+        position: absolute;
+        z-index: 999;
        
     }
     @media(min-width:1024px){

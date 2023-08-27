@@ -32,6 +32,8 @@ export const LoginForm = styled(Form)`
     }
     @media(min-width:425px){
         width: 80%;
+        position: absolute;
+        top: 300px;
     }
     @media(min-width:768px){
         width: 50%;
