@@ -16,7 +16,7 @@ export const Navbar = () => {
         <LogoContainer onClick={() => navigate("/")}>
           <LogoNavbar src='/images/Fernandez viajes.png'></LogoNavbar>
         </LogoContainer>
-        <ItemsContainer>
+        <ItemsContainer >
         <IconBurgerContainer>        
           <BurgerIcon onClick={() =>  dispatch(userActions.hiddenMenu())}/>
         </IconBurgerContainer>

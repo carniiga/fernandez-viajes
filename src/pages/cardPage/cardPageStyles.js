@@ -23,7 +23,6 @@ export const CardAndHeroContainer = styled.div`
   height: fit-content;
   width: 80%;
   backdrop-filter: blur(5px);
-  border: 2px dashed red;
   @media(min-width: 320px){
     flex-direction: column;
   }
@@ -80,7 +79,6 @@ export const ServicesAndPriceContainer = styled.div`
   justify-content: space-around;
   height: 300px;
   margin-top: 30px;
-  border: 2px dashed pink;
   @media screen and (min-width : 320px) {
     flex-direction: column;
     width: 250px;
@@ -98,7 +96,6 @@ export const ServicesContainer = styled.div`
     height: fit-content;
     width: 30%;
     margin-top: 10px;
-    border: 2px dashed red;
     @media(min-width : 320px){
       width: 100%;
     

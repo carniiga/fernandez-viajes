@@ -74,6 +74,11 @@ export const ItemsContainer = styled.div`
         flex-direction: column;
         width:300px;
     }
+    @media(min-width : 425px){
+        margin-top: 200px;
+        height: 300px ;
+       display: ${props => props.hidden? "none" : "flex"};
+    }
     @media(min-width : 1024px){
         display: flex;
         flex-direction: row;
@@ -110,6 +115,7 @@ export const ItemUl = styled.ul`
         margin-top: 30px;
         z-index: 150;
         display: ${props => props.hidden ? "none" : "flex"};
+       
     }
     @media(min-width: 1024px ){
         flex-direction: row;
@@ -170,7 +176,6 @@ export const IconBurgerContainer = styled.div`
     justify-content: center;
     text-align: center;
     @media(min-width : 375px){
-        border: 2px dashed red;
         margin-left: 250px;
        
     }

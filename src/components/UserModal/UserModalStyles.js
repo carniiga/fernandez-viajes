@@ -18,7 +18,9 @@ export const UserModalContainer = styled.div`
     top: 50px;
     @media(min-width : 320px){
         right: 0;
+        
     }
+    
     
 `;
 
