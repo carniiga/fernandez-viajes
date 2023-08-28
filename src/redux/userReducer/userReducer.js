@@ -21,7 +21,8 @@ export const userReducer = (state = initialState , action) => {
         case OPEN_USER_MODAL : {
             return {
                 ...state ,
-                hiddenModal : false
+                hiddenModal : false,
+                hiddenMenu : !state.hiddenMenu
             }
         }
         case CLOSE_USER_MODAL : {

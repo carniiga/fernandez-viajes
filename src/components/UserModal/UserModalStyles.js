@@ -6,7 +6,7 @@ export const UserModalContainer = styled.div`
     width: 200px;
     height: 300px;
     position: absolute;
-    z-index: 999;
+    z-index: 800;
     right: 20px;
     display: ${props => props.hidden};
     flex-direction: column ;

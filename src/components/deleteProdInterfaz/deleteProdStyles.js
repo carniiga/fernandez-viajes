@@ -6,7 +6,7 @@ export const DeleteContainer = styled.div`
         flex-direction: column;
         width: 100%;
         height: 100%;
-        z-index: 333;
+        z-index: 900;
         justify-content: center;
         align-items: center;
         backdrop-filter: ${props => props.hidden ? "none": "blur(20px)"} ;

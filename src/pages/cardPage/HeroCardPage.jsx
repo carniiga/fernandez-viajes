@@ -33,6 +33,7 @@ import {
   TittleCardHero,
 } from "../../components/cardsHero/heroCardsStyles";
 import Footer from "../../components/footer/Footer"
+import UserModal from "../../components/UserModal/UserModal";
 const CardPage = () => {
   const params = useParams();
   const products = useSelector(state => state.products.prods);
@@ -48,6 +49,7 @@ const CardPage = () => {
     <>
       <BodyCardContainer>
         <Navbar />
+        <UserModal/>
         <CardAndHeroContainer>
           <CardHeroPage props={findProd} />
           <DescriptionPackage>
