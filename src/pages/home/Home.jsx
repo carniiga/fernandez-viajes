@@ -10,10 +10,13 @@ import Footer from '../../components/footer/Footer'
 import * as userActions from "../../redux/userReducer/userActions"
 const Home = () => {
   const  dispatch = useDispatch()
+  const menuHidden = useSelector(state => state.user.hiddenMenu)
   const userModal = useSelector(state => state.user.hiddenModal)
   useEffect(() => {
     if(userModal == false){
       dispatch(userActions.closeUserModal())
+    }else if (menuHidden == false){
+      dispatch(userActions.hiddenMenu())
     }
   }, [])
   return (

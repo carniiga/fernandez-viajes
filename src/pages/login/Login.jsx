@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navbar } from '../../components/navbar/navbar'
 import {  ButtonContainer, EmailLogo, InputsLoginContainer, LoginContainer, LoginForm  ,LoginInputs,LoginTitle, LoginTitleContainer,  PasswordLogo,  UserLogoContainer } from './loginStyles'
 import * as userActions from "../../redux/userReducer/userActions"
@@ -8,17 +8,24 @@ import { ErrorMsg, HaveAccountContainer, HaveAcoountMsg, RegisterWrapper } from 
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Footer from "../../components/footer/Footer"
-
 const Login = () => {
   const [errorMsg , setErrorMsg] = useState(false)
   const dispatch = useDispatch()
   const userLogin = useSelector(state =>  state.user.user)
   const navigate = useNavigate()
+  const menuHidden = useSelector(state =>  state.user.hiddenMenu)
+  
   setTimeout(()=> {
     if(userLogin) {
       navigate("/")
     }
   },"1000")
+  useEffect(() => {
+    if (menuHidden == false){
+        dispatch(userActions.hiddenMenu())
+      }
+    }, [])
+  
   return (
     <>
     <RegisterWrapper>

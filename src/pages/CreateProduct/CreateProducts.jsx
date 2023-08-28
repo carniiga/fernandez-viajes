@@ -34,7 +34,6 @@ const CreateProducts = () => {
     };
     reader.readAsDataURL(file);
   };
-  console.log(images[0])
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userActions.closeUserModal());

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar } from "../../components/navbar/navbar";
 import {
   ButtonForm,
@@ -21,10 +21,19 @@ import {
 import { Formik } from "formik";
 import { registerSchema, registerUserFetch } from "./registerUtils";
 import { useNavigate } from "react-router-dom";
+import * as userActions from "../../redux/userReducer/userActions"
+import { useDispatch, useSelector } from "react-redux";
 
 const Register = () => {
   const [mensaje , setMensaje] = useState("")
   const navigate = useNavigate()
+  const menuHidden = useSelector(state =>  state.user.hiddenMenu)
+  const dispatch = useDispatch()
+  useEffect(() => {
+     if (menuHidden == false){
+      dispatch(userActions.hiddenMenu())
+    }
+  }, [])
   return (
     <>
     <RegisterWrapper>
