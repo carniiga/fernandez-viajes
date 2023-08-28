@@ -87,7 +87,7 @@ const CardPage = () => {
                   <IconWspContainer>
                     <IconWsp />
                   </IconWspContainer>
-                  <ServiceParagraph>¡Consultanos al WhatsApp!</ServiceParagraph>
+                  <ServiceParagraph target="_blank"  href="https://wa.me/+541144078497">¡Consultanos al WhatsApp!</ServiceParagraph>
                 </LiContainer>
               </ServicesContainer>
               <PriceFinalForPersonContainer>

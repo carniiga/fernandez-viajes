@@ -135,10 +135,13 @@ export const IconPlane = styled(BiSolidPlaneAlt)`
   font-size: 25px;
   color: white;
 `
-export const ServiceParagraph = styled.p`
+export const ServiceParagraph = styled.a`
   font-family: var(--font);
   margin-left: 10px;
   font-size: 12px;
+  color: black;
+  cursor: pointer;
+
   @media(min-width: 320px){
     font-size: 16px;
   }
