@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ButtonForgot, ButtonForgotContainer, ForgotErrorParagraph, ForgotForm, ForgotFormContainer, ForgotInput, ForgotTitle, ForgotTitleContainer, ForgotWrapper } from './forgotPasswordStyles'
 import {Navbar} from "../../components/navbar/navbar"
 import Footer from "../../components/footer/Footer"
 import { Formik } from 'formik'
 import { fetchEmailDb } from './forgotPassUtil'
 import { useNavigate } from 'react-router-dom'
+import * as userActions from "../../redux/userReducer/userActions"
+import { useDispatch, useSelector } from 'react-redux'
 const ForgotPassword = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const menuHidden = useSelector(state => state.user.hiddenMenu)
+  useEffect(() => {
+    if (menuHidden == false){
+        dispatch(userActions.hiddenMenu())
+      }
+    }, [])
   return (
     <> 
     <ForgotWrapper>
