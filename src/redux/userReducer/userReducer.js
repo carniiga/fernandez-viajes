@@ -7,6 +7,7 @@ const initialState = {
     hiddenModal : true,
     hiddenDelete : true,
     hiddenMenu : true,
+    idSelected : null,
 }
 
 export const userReducer = (state = initialState , action) => {
@@ -35,7 +36,9 @@ export const userReducer = (state = initialState , action) => {
         case DELETE_PROD_MODAL : {
             return {
                 ...state ,
-                hiddenDelete :  !state.hiddenDelete
+                hiddenDelete :  !state.hiddenDelete,
+                idSelected : action.payload
+                
             }
         }
         case HIDDEN_MENU :{

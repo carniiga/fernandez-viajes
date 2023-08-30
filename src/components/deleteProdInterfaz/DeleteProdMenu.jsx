@@ -4,15 +4,22 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as userActions from "../../redux/userReducer/userActions"
 import { deleteProdById } from '../cardsHero/heroCardsUtils'
 import { reloadWindow } from '../../pages/CreateProduct/createProductsStyles'
-const DeleteProdMenu = (id) => {
+const DeleteProdMenu = () => {
+ 
     const hiddenModal = useSelector(state => state.user.hiddenDelete)
     const token = useSelector(state => state.user.user)
     const dispatch = useDispatch()
-    const deleteProd = async (id,e) => {
+    const id = useSelector(state => state.user.idSelected)
+   
+    const deleteProd = async(id,e) => {
         e.preventDefault()
-         const deleteProd = await  deleteProdById(id.id , token.token)
+    
+        console.log(id , id.length)
+         const deleteProd = await  deleteProdById(id , token.token)
          dispatch(userActions.deleteProdModal())
          reloadWindow()
+       
+        
    
 }
 

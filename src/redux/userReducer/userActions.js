@@ -22,8 +22,9 @@ export const closeUserModal = () => ({
     type : CLOSE_USER_MODAL
 })
 
-export const deleteProdModal = () => ({
-    type : DELETE_PROD_MODAL
+export const deleteProdModal = (id) => ({
+    type : DELETE_PROD_MODAL,
+    payload : id
 })
 
 export const hiddenMenu = () => ({

@@ -41,7 +41,7 @@ export const HeroProductsContainer = styled.div`
         flex-direction: row;
     }
     @media(min-width: 1024px){
-        width: 80%;
+        width: 70%;
         justify-content: space-around;
     }
     @media(min-width : 1440px){

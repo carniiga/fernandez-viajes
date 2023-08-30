@@ -36,7 +36,7 @@ const HeroCards = (props) => {
         {user && user.rol[0]  === "admin" ? (
           <ButtonsContainer>
           <EditIcon onClick={() => navigate(`/updateProduct/${_id}`)} />
-          <DeleteIcon onClick={() => dispatch(userActions.deleteProdModal())}/>
+          <DeleteIcon onClick={() => dispatch(userActions.deleteProdModal(_id)) }/>
         </ButtonsContainer>
         ) : (null)}
         <ImgContainer bgimg={imgUrl[0]}></ImgContainer>
@@ -58,7 +58,7 @@ const HeroCards = (props) => {
             Tarifa por persona en Base triple/cuadruple + tasas e impuestos
           </TarifasContainer>
         </InformationPackageContainer>
-        <DeleteProdMenu id = {_id}/>
+        <DeleteProdMenu />
       </CardsHeroContainer>
         
     </>
