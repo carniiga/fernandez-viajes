@@ -4,9 +4,12 @@ import { DateParagraph } from '../../../components/cardsHero/heroCardsStyles'
 import {  Formik } from 'formik'
 import { useSelector } from 'react-redux'
 import { UpdateProd } from './UpdateProdFetch'
+import { useNavigate } from 'react-router-dom'
+import { reloadWindow } from '../../CreateProduct/createProductsStyles'
 const FormUpdate = (props) => {
     const {lugar, provincia ,   price , hotel  , totalQuantity , imgUrl, _id} = props
     const user = useSelector(state => state.user.user)
+    const navigate = useNavigate()
   return (
    <>
    <Formik
@@ -23,6 +26,8 @@ const FormUpdate = (props) => {
     onSubmit={ async values => {
       
         await UpdateProd(values, user.token , _id)
+        navigate("/")
+        reloadWindow()
    
     }}
    >
