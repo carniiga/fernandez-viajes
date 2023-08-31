@@ -7,6 +7,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 const EmailSent = () => {
     const navigate = useNavigate()
     const {email} = useParams()
+    //esta seccion se encarga de   mostrar un simple mensaje de que el email que se ingreso en "ForgotPassword"  se le ha  mandado  el email con el link para restablecer la contraseña.
+
   return (
     <>
     <EmailSentWrapper>

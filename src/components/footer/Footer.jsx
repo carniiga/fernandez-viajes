@@ -7,6 +7,9 @@ const Footer = () => {
     <FooterContainer>
         <FooterUlContainer>
         <FooterUl>
+
+          
+          {/* debido a que la aplicacion es ficticia , solamente los items son simplemente estetica.  */}
             <FooterLi>Trabaja con nosotros</FooterLi>
             <FooterLi>Términos y condiciones</FooterLi>
             <FooterLi>Cómo cuidamos tu privacidad</FooterLi>

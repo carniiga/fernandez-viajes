@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import * as userActions from "../../redux/userReducer/userActions"
 export const Navbar = () => {
-  const navigate = useNavigate()
-  const user = useSelector(state => state.user.user)
+  const navigate = useNavigate() 
+  const user = useSelector(state => state.user.user) //accedemos a la informacion del usuario logeado.
   const dispatch = useDispatch()
-  const modalUser = useSelector(state => state.user.hiddenModal)
-  const menuHidden = useSelector(state => state.user.hiddenMenu)
+  const modalUser = useSelector(state => state.user.hiddenModal) //este es el modal del user . inicia en true. osea oculto 
+  const menuHidden = useSelector(state => state.user.hiddenMenu) // este es el menu responsive. inicia en true osea oculto.
  
 
   return (
@@ -21,10 +21,10 @@ export const Navbar = () => {
           <BurgerIcon onClick={() =>  dispatch(userActions.hiddenMenu())}/>
         </IconBurgerContainer>
             <ItemUl hidden ={menuHidden}>
-                <ItemsLINavbar>Sobre Nosotros</ItemsLINavbar>
                 <ItemsLINavbar>Contactanos</ItemsLINavbar>
                 {user ? (<IconUserContainer>
                   <UserIcon onClick={() => dispatch(userActions.openUserModal())}/>
+                 {/* si hay usuario logeado se muestra el icono del user para utilizar el modal (por el momento el usuario comun no tiene ninguna accion sobre la aplicacion. ) */}
                 </IconUserContainer>) :  (<ItemsLINavbar onClick={() => navigate("/register")}>Registrate</ItemsLINavbar>)}
               
             </ItemUl>

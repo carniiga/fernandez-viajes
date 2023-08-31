@@ -104,7 +104,7 @@ export const ItemUl = styled.ul`
     backdrop-filter: blur(3px);
     @media(min-width : 320px){
         flex-direction: column;
-        height: 200px;
+        height: 150px;
         backdrop-filter: blur(10px);
         margin-top: 100px;
         width:  100%;
@@ -113,7 +113,8 @@ export const ItemUl = styled.ul`
     }
     @media(min-width : 375px){
         flex-direction: column;
-        height: 300px;
+        height: 200px;
+        width: 80%;
         backdrop-filter: blur(10px);
         margin-top: 30px;
         z-index: 150;
@@ -123,13 +124,13 @@ export const ItemUl = styled.ul`
     @media(min-width: 1024px ){
         flex-direction: row;
         display: flex;
-        width: 500px;
+        width: 400px;
         height: 150px;
         margin-top: 0;
         backdrop-filter: blur(10px);
     }
     @media(min-width: 1440px){
-        width: 700px;
+        width: 600px;
     }
     
     

@@ -6,15 +6,14 @@ import { deleteProdById } from '../cardsHero/heroCardsUtils'
 import { reloadWindow } from '../../pages/CreateProduct/createProductsStyles'
 const DeleteProdMenu = () => {
  
-    const hiddenModal = useSelector(state => state.user.hiddenDelete)
-    const token = useSelector(state => state.user.user)
+    const menuDelete = useSelector(state => state.user.hiddenDelete) //accedemos al estado para mostrar el menu de  eliminar el producto. 
+    const token = useSelector(state => state.user.user) //accedemos al token del usuario para poder  realizar acciones sobre los productos. en este caso es para elimiarlo de la base de datos.
     const dispatch = useDispatch()
-    const id = useSelector(state => state.user.idSelected)
+    const id = useSelector(state => state.user.idSelected) //accedemos al id del producto seleccionado
    
     const deleteProd = async(id,e) => {
         e.preventDefault()
-    
-        console.log(id , id.length)
+        // esta funcion se encarga de llamar a una funcion que creamos para poder hacer la peticion "DELETE" para eliminar el producto. cuando se elimina el producto se cierra el menu para eliminar el producto y se hace un refresco de ventana automaticamente para que se actulice el producto en el home.         
          const deleteProd = await  deleteProdById(id , token.token)
          dispatch(userActions.deleteProdModal())
          reloadWindow()
@@ -26,8 +25,8 @@ const DeleteProdMenu = () => {
    
   return (
     <>
-    <DeleteContainer hidden = {hiddenModal}>
-    <DeleteProdContainer hidden = {hiddenModal}>
+    <DeleteContainer hidden = {menuDelete}>
+    <DeleteProdContainer hidden = {menuDelete}>
         <DeleteProdTitle>¿Estas seguro que queres borrar el producto? </DeleteProdTitle>
         <DeleteButtonContainer>
             <ButtonDeleteContainer>

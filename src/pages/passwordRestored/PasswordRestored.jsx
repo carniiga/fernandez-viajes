@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const PasswordRestored = () => {
     const navigate = useNavigate()
+    // esta seccion solo se encarga de mostrar un mensaje de exito que se restablecio la contraseña. 
   return (
    <>
    <RestoredPassWrapper>

@@ -12,7 +12,7 @@ const Hero =  () => {
  
 
   const products = useSelector(state => state.products.prods)
-  const productsChain = products.slice(inicio, final)
+  const productsChain = products.slice(inicio, final) //aca  llamamos los productos de a 6. 
 
   const nextPage = (e) => {
     e.preventDefault()

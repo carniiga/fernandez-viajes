@@ -31,13 +31,16 @@ const ForgotPassword = () => {
       validate={(values) => {
         const errors = {};
         if(!values.email){
+          //este maneja el error , que si no ingresa ningun dato en el campo se le pide que lo ingrese.
           errors.email = "ingrese email "
         }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
           errors.email = "email invalido";
         }
+        // si lo ingresa , se le aplica un regex que pide datos de formato :  un caracter especial una mayuscula y numeros.
         return errors
       }}
       onSubmit={async values => {
+        //una vez que se  mande los datos se llama a una funcion que se encarga de realizar la peticion "POST" para restablecer la contraseña.Luego se lo direcciona a la pagina informandole que se le mando un email con el link para restablecer la contraseña. 
         const sendEmail = await fetchEmailDb(values.email)
         navigate(`/emailSent/${values.email}`)
         

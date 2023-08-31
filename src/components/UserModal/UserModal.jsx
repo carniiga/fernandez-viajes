@@ -5,7 +5,7 @@ import * as userActions from "../../redux/userReducer/userActions"
 import { Navigate, useNavigate } from 'react-router-dom'
 
 const UserModal = () => {
-    const hidden = useSelector(state => state.user.hiddenModal)
+    const hidden = useSelector(state => state.user.hiddenModal) //este es el userModal para el usuario. 
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -14,6 +14,7 @@ const UserModal = () => {
   return (
     <>
     {user ? (<UserModalContainer hidden={hidden ? "none" : "flex"}>
+        {/* si hay usuario   y si le hace click al modal se abre .  */}
         <ButtonCloseModalContainer >
         <ButtonClose onClick={() => dispatch(userActions.closeUserModal())} >X</ButtonClose>
         </ButtonCloseModalContainer>
@@ -22,6 +23,8 @@ const UserModal = () => {
                 <UserParagraph>Bienvenido <UserNameSpan>{user.userName}</UserNameSpan>! </UserParagraph>
             </UserNameContainer>
             { user &&  user.rol[0]  === "admin"? (
+            
+            // aca se verifica si el usuario logeado tiene rol de admin ya que la app está enfocada solamente al admin. y si es asi se le muestra la opcion para cargar productos nuevos desde el front
                 <UserItemsUl>
                 <UserItemLi onClick={() => navigate("/createProd")}>Cargar Productos</UserItemLi>
                 <UserItemLi onClick={() => dispatch(userActions.userLogout())}>Cerrar Sesion</UserItemLi>

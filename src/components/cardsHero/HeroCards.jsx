@@ -25,7 +25,7 @@ import * as userActions from "../../redux/userReducer/userActions"
 const HeroCards = (props) => {
   const { provincia , lugar , price, imgUrl, _id  } = props;
   const navigate= useNavigate()
-  const user = useSelector(state => state.user.user)
+  const user = useSelector(state => state.user.user) //accedemos al estado del usuario logeado para verificar si  es el admin o un user comun.
  
   const dispatch = useDispatch()
  
@@ -34,6 +34,7 @@ const HeroCards = (props) => {
     
       <CardsHeroContainer>
         {user && user.rol[0]  === "admin" ? (
+          //si el usuario logeado tiene rol admin se le mostrara los botones para eliminar o editar el producto. 
           <ButtonsContainer>
           <EditIcon onClick={() => navigate(`/updateProduct/${_id}`)} />
           <DeleteIcon onClick={() => dispatch(userActions.deleteProdModal(_id)) }/>

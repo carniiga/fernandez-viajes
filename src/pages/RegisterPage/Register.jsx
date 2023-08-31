@@ -53,8 +53,10 @@ const Register = () => {
         onSubmit={async ( values , {resetForm})  =>  { 
             const {userName , email , password} = values  
             const createUser = {userName , email , password}
+            //una vez tenido los valores, se le manda la peticion con metodo "POST" para registrar el usuario en la base de datos.
             const saveUser = await registerUserFetch(createUser)
             if(saveUser === false){
+              //si el usuario existe se lo envia a la pagina de login
               setMensaje("este usuario ya existe")
               setTimeout(() => {
                 resetForm()
@@ -62,6 +64,7 @@ const Register = () => {
               }, "3000")
               
             }else{
+              //si el usuario se registra exitosamente se lo envia a la pagina de login
               setMensaje("usuario creado exitosamente")
               setTimeout(() => {
                 resetForm()
@@ -74,7 +77,7 @@ const Register = () => {
             
         }}
         >
-        {({errors , touched  , resetForm}) => (
+        {({errors , touched }) => (
              <FormContainer >
              <InputsContainer>
                <RegisterLogoContainer>

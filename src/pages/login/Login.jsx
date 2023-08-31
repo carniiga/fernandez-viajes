@@ -9,11 +9,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Footer from "../../components/footer/Footer"
 const Login = () => {
-  const [errorMsg , setErrorMsg] = useState(false)
+  const [errorMsg , setErrorMsg] = useState(false) //hacemos un estado de manejo de true o false para mostrar un mensaje de error en color rojo. 
   const dispatch = useDispatch()
-  const userLogin = useSelector(state =>  state.user.user)
+  const userLogin = useSelector(state =>  state.user.user) //se accede al estado del user , para verificar si se logeo. y si se logeo se redirecciona al home
   const navigate = useNavigate()
-  const menuHidden = useSelector(state =>  state.user.hiddenMenu)
+  const menuHidden = useSelector(state =>  state.user.hiddenMenu) //accedemos al estado del  menu responsive, para asegurarnos que quede cerrado  si se navega a una seccion de la app. 
   
   setTimeout(()=> {
     if(userLogin) {
@@ -41,6 +41,7 @@ const Login = () => {
         }} 
         validationSchema={loginSchema}
         onSubmit={async (values) => {
+          //una vez tenido los valores se manda la peticion  con metodo "POST" para logearse y obtener la informacion del usuario y del token. 
           const loginUser = await validationUser(values)
           const {token , userName , rol} = loginUser
           console.log(loginUser)
