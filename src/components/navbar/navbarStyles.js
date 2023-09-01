@@ -136,9 +136,14 @@ export const ItemUl = styled.ul`
     
 `;
 
-export const ItemsLINavbar = styled.li`
-    list-style: none;
+export const ItemsLINavbar = styled.a`
     font-size: 20px;
+    text-decoration: none;
+    color: black;
+    &:visited{
+        color: black;
+        text-decoration-color: black;
+    }
     transition: ease .5s;
     cursor: pointer;
     &:hover{

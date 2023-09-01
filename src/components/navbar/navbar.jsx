@@ -21,7 +21,7 @@ export const Navbar = () => {
           <BurgerIcon onClick={() =>  dispatch(userActions.hiddenMenu())}/>
         </IconBurgerContainer>
             <ItemUl hidden ={menuHidden}>
-                <ItemsLINavbar>Contactanos</ItemsLINavbar>
+                <ItemsLINavbar href="https://wa.me/+541144078497?text=¡hola!.Vengo desde la App Me gustaria tener mas informacion sobre los viajes ." target='_blank'>Contactanos</ItemsLINavbar>
                 {user ? (<IconUserContainer>
                   <UserIcon onClick={() => dispatch(userActions.openUserModal())}/>
                  {/* si hay usuario logeado se muestra el icono del user para utilizar el modal (por el momento el usuario comun no tiene ninguna accion sobre la aplicacion. ) */}
