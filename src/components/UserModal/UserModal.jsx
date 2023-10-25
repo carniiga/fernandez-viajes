@@ -26,7 +26,7 @@ const UserModal = () => {
             
             // aca se verifica si el usuario logeado tiene rol de admin ya que la app está enfocada solamente al admin. y si es asi se le muestra la opcion para cargar productos nuevos desde el front
                 <UserItemsUl>
-                <UserItemLi onClick={() => navigate("/createProd")}>Cargar Productos</UserItemLi>
+               
                 <UserItemLi onClick={() => dispatch(userActions.userLogout())}>Cerrar Sesion</UserItemLi>
                 </UserItemsUl>
             ) : (

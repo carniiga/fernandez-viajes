@@ -106,7 +106,7 @@ export const ProdParagraph = styled.p`
     color: white;
     @media (min-width: 375px ){
         font-size: 18px;
-        color: black;
+        color: white;
     }
 `;
 export const InputProd = styled(Field)`

@@ -9,8 +9,12 @@ export const LoginContainer = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 20px auto;
     height: 100vh;
+    backdrop-filter:blur(10px);
+   
+
 `;
 
 export const LoginTitleContainer = styled(RegisterTitleContainer)`
@@ -20,19 +24,20 @@ export const LoginTitle = styled(RegisterTitle)`
 
 `;
 export const LoginForm = styled(Form)`
-    margin: 50px auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     width: 50%;
-    height: 80vh;
+    height: 50vh;
+   
     @media(min-width:320px){
         width: 100%;
+        
     }
     @media(min-width:425px){
         width: 80%;
-        position: absolute;
         top: 300px;
     }
     @media(min-width:768px){

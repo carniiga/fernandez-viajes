@@ -2,7 +2,7 @@
 import { useSelector } from 'react-redux'
 import HeroCards from '../cardsHero/HeroCards'
 import {  ButtonNextContainer, ButtonParagraph, ButtonPrevContainer, HeroContainer, HeroProductsContainer, HeroTitleH1, NextAndPrevContainer} from './heroStyles'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 
 const Hero =  () => {
@@ -12,6 +12,7 @@ const Hero =  () => {
  
 
   const products = useSelector(state => state.products.prods)
+  console.log(products)
   const productsChain = products.slice(inicio, final) //aca  llamamos los productos de a 6. 
 
   const nextPage = (e) => {
@@ -47,6 +48,7 @@ const Hero =  () => {
           <ButtonParagraph >Pagina previa</ButtonParagraph>
           </ButtonPrevContainer>)}
          {promedio == products.length ? ("") : ( <ButtonNextContainer onClick={(e) => nextPage(e)} >
+          
             <ButtonParagraph >Pagina Siguiente</ButtonParagraph>
           </ButtonNextContainer>)}
         </NextAndPrevContainer>

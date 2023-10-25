@@ -216,3 +216,22 @@ export const BurgerIcon = styled(GiHamburgerMenu)`
         display: none;
     }
 `;
+
+export const CreateProdBtn = styled.div`
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+    padding: 2px;
+    transition: 1s ease all;
+    color: white;
+    &:hover{
+        cursor: pointer;
+        font-size: 22px;
+    }
+    
+`;

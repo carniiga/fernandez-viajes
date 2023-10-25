@@ -1,5 +1,5 @@
 import React from 'react'
-import { BurgerIcon, IconBurgerContainer, IconUserContainer, ItemUl, ItemsContainer, ItemsLINavbar, LogoContainer, LogoNavbar, NavbarContainer, UserIcon } from './navbarStyles'
+import { BurgerIcon, CreateProdBtn, IconBurgerContainer, IconUserContainer, ItemUl, ItemsContainer, ItemsLINavbar, LogoContainer, LogoNavbar, NavbarContainer, UserIcon } from './navbarStyles'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import * as userActions from "../../redux/userReducer/userActions"
@@ -21,11 +21,18 @@ export const Navbar = () => {
           <BurgerIcon onClick={() =>  dispatch(userActions.hiddenMenu())}/>
         </IconBurgerContainer>
             <ItemUl hidden ={menuHidden}>
+            {user?.rol == "admin"? (
+                    <CreateProdBtn onClick={() => navigate("/createProd")} >Cargar Paquete</CreateProdBtn>
+                  ) : (null)}
                 <ItemsLINavbar href="https://wa.me/+541144078497?text=¡hola!.Vengo desde la App Me gustaria tener mas informacion sobre los viajes ." target='_blank'>Contactanos</ItemsLINavbar>
+               
+                  
                 {user ? (<IconUserContainer>
                   <UserIcon onClick={() => dispatch(userActions.openUserModal())}/>
+  
                  {/* si hay usuario logeado se muestra el icono del user para utilizar el modal (por el momento el usuario comun no tiene ninguna accion sobre la aplicacion. ) */}
                 </IconUserContainer>) :  (<ItemsLINavbar onClick={() => navigate("/register")}>Registrate</ItemsLINavbar>)}
+                
               
             </ItemUl>
             
